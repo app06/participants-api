@@ -1,0 +1,369 @@
+{
+	"info": {
+		"_postman_id": "22f6c9fb-edb7-49af-9a12-ff4cadbc4bb6",
+		"name": "Participants",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Vasyta\",\r\n    \"email\": \"test@test.ru\",\r\n    \"password\": \"12345678\",\r\n    \"password_confirmation\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://participant.local/api/register",
+							"protocol": "http",
+							"host": [
+								"participant",
+								"local"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"grant_type\" : \"password\",\r\n    \"client_id\" : \"2\",\r\n    \"client_secret\" : \"r1EahG35lTwOlp9kyc4QOyfXQpa1mlwOk3Iydade\",\r\n    \"username\" : \"test1@test.ru\",\r\n    \"password\" : \"12345678\",\r\n    \"scope\" : \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://participant.local/oauth/token",
+							"protocol": "http",
+							"host": [
+								"participant",
+								"local"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Get All Participants",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiYWFjZjlmMDIyOTcwZWE4ZjNhYjBkZjEyNzkyYTI1MmRlMDNjZDY4NmY3YzRmMTdiNjg2NTEyOTMyNzU2NGIxNWU5NmEzZWUxZWZiY2YwZTAiLCJpYXQiOjE1OTQ5ODU3NjgsIm5iZiI6MTU5NDk4NTc2OCwiZXhwIjoxNjI2NTIxNzY4LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.CSXUtzcxXB5SfyqlJVwNxWStWQTHIlUCHnKehMsDGSHX_-B9E0ao5j87mpqPe9UA-r2YolSVEaNqhRt1vYYfUSw1ubJhme65nYusi14pAxhEkFist8_o88sT9Lx2sTWFNsw0Tg3T3Ms8eAv9_xhzNb0_N5JdFp6bDCLJ0rHWchqQhJIwH1zcRMtrSpZEfwxXAMoxq-lhUgMYUZun28zyCjBQelY1nvoQ1xjfTyU90UEj0tU-3kN4odngplIwNGTa70GVnt1Xrr3Ga-3f_HdPJJ1_3mZTb8M49alx6IbHufbQKNeYz3KLlyuIX9fjfbID6usbURY5B_MafaxSyQrcBt0xpLnN97AiNsgW5UcSlmq6NHp596rRuF6C4cnPH9MnaoZ65RwLYLkSrwXAmf_gaWNlKU5L2ndlT2BBEz5iZ05LgQ-dZJ0zPK5mAVfXW89IYU6iekwtA8PnB9vF3GpeBJaHUprDxKIxytlrZDNukeVHC-u7Y_cIWez_A543E7oyv4eIFK7W6IrJGJZrrEwPzg4v2owQqSBW6PZBg4L_iTV1KtTTtMBBE_zwOAgqIcGJTAGSrmtYSTYitBIT0sVfgH6fc45of3JGi99XWglZLLSmYAZjF4Ub2x6K_q8khSLkd_7iec98jNRsAjIhKW8zxYoVu5ShRZtkWrkheLmEYb4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://participant.local/api/participants",
+					"protocol": "http",
+					"host": [
+						"participant",
+						"local"
+					],
+					"path": [
+						"api",
+						"participants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Participant",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiYWFjZjlmMDIyOTcwZWE4ZjNhYjBkZjEyNzkyYTI1MmRlMDNjZDY4NmY3YzRmMTdiNjg2NTEyOTMyNzU2NGIxNWU5NmEzZWUxZWZiY2YwZTAiLCJpYXQiOjE1OTQ5ODU3NjgsIm5iZiI6MTU5NDk4NTc2OCwiZXhwIjoxNjI2NTIxNzY4LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.CSXUtzcxXB5SfyqlJVwNxWStWQTHIlUCHnKehMsDGSHX_-B9E0ao5j87mpqPe9UA-r2YolSVEaNqhRt1vYYfUSw1ubJhme65nYusi14pAxhEkFist8_o88sT9Lx2sTWFNsw0Tg3T3Ms8eAv9_xhzNb0_N5JdFp6bDCLJ0rHWchqQhJIwH1zcRMtrSpZEfwxXAMoxq-lhUgMYUZun28zyCjBQelY1nvoQ1xjfTyU90UEj0tU-3kN4odngplIwNGTa70GVnt1Xrr3Ga-3f_HdPJJ1_3mZTb8M49alx6IbHufbQKNeYz3KLlyuIX9fjfbID6usbURY5B_MafaxSyQrcBt0xpLnN97AiNsgW5UcSlmq6NHp596rRuF6C4cnPH9MnaoZ65RwLYLkSrwXAmf_gaWNlKU5L2ndlT2BBEz5iZ05LgQ-dZJ0zPK5mAVfXW89IYU6iekwtA8PnB9vF3GpeBJaHUprDxKIxytlrZDNukeVHC-u7Y_cIWez_A543E7oyv4eIFK7W6IrJGJZrrEwPzg4v2owQqSBW6PZBg4L_iTV1KtTTtMBBE_zwOAgqIcGJTAGSrmtYSTYitBIT0sVfgH6fc45of3JGi99XWglZLLSmYAZjF4Ub2x6K_q8khSLkd_7iec98jNRsAjIhKW8zxYoVu5ShRZtkWrkheLmEYb4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"my32v9@test.ru\",\r\n    \"first_name\": \"\",\r\n    \"last_name\": \"\",\r\n    \"event_id\": \"208\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://participant.local/api/participants",
+					"protocol": "http",
+					"host": [
+						"participant",
+						"local"
+					],
+					"path": [
+						"api",
+						"participants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get One Participant",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiYWFjZjlmMDIyOTcwZWE4ZjNhYjBkZjEyNzkyYTI1MmRlMDNjZDY4NmY3YzRmMTdiNjg2NTEyOTMyNzU2NGIxNWU5NmEzZWUxZWZiY2YwZTAiLCJpYXQiOjE1OTQ5ODU3NjgsIm5iZiI6MTU5NDk4NTc2OCwiZXhwIjoxNjI2NTIxNzY4LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.CSXUtzcxXB5SfyqlJVwNxWStWQTHIlUCHnKehMsDGSHX_-B9E0ao5j87mpqPe9UA-r2YolSVEaNqhRt1vYYfUSw1ubJhme65nYusi14pAxhEkFist8_o88sT9Lx2sTWFNsw0Tg3T3Ms8eAv9_xhzNb0_N5JdFp6bDCLJ0rHWchqQhJIwH1zcRMtrSpZEfwxXAMoxq-lhUgMYUZun28zyCjBQelY1nvoQ1xjfTyU90UEj0tU-3kN4odngplIwNGTa70GVnt1Xrr3Ga-3f_HdPJJ1_3mZTb8M49alx6IbHufbQKNeYz3KLlyuIX9fjfbID6usbURY5B_MafaxSyQrcBt0xpLnN97AiNsgW5UcSlmq6NHp596rRuF6C4cnPH9MnaoZ65RwLYLkSrwXAmf_gaWNlKU5L2ndlT2BBEz5iZ05LgQ-dZJ0zPK5mAVfXW89IYU6iekwtA8PnB9vF3GpeBJaHUprDxKIxytlrZDNukeVHC-u7Y_cIWez_A543E7oyv4eIFK7W6IrJGJZrrEwPzg4v2owQqSBW6PZBg4L_iTV1KtTTtMBBE_zwOAgqIcGJTAGSrmtYSTYitBIT0sVfgH6fc45of3JGi99XWglZLLSmYAZjF4Ub2x6K_q8khSLkd_7iec98jNRsAjIhKW8zxYoVu5ShRZtkWrkheLmEYb4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://participant.local/api/participants/1",
+					"protocol": "http",
+					"host": [
+						"participant",
+						"local"
+					],
+					"path": [
+						"api",
+						"participants",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Participant",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiYWFjZjlmMDIyOTcwZWE4ZjNhYjBkZjEyNzkyYTI1MmRlMDNjZDY4NmY3YzRmMTdiNjg2NTEyOTMyNzU2NGIxNWU5NmEzZWUxZWZiY2YwZTAiLCJpYXQiOjE1OTQ5ODU3NjgsIm5iZiI6MTU5NDk4NTc2OCwiZXhwIjoxNjI2NTIxNzY4LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.CSXUtzcxXB5SfyqlJVwNxWStWQTHIlUCHnKehMsDGSHX_-B9E0ao5j87mpqPe9UA-r2YolSVEaNqhRt1vYYfUSw1ubJhme65nYusi14pAxhEkFist8_o88sT9Lx2sTWFNsw0Tg3T3Ms8eAv9_xhzNb0_N5JdFp6bDCLJ0rHWchqQhJIwH1zcRMtrSpZEfwxXAMoxq-lhUgMYUZun28zyCjBQelY1nvoQ1xjfTyU90UEj0tU-3kN4odngplIwNGTa70GVnt1Xrr3Ga-3f_HdPJJ1_3mZTb8M49alx6IbHufbQKNeYz3KLlyuIX9fjfbID6usbURY5B_MafaxSyQrcBt0xpLnN97AiNsgW5UcSlmq6NHp596rRuF6C4cnPH9MnaoZ65RwLYLkSrwXAmf_gaWNlKU5L2ndlT2BBEz5iZ05LgQ-dZJ0zPK5mAVfXW89IYU6iekwtA8PnB9vF3GpeBJaHUprDxKIxytlrZDNukeVHC-u7Y_cIWez_A543E7oyv4eIFK7W6IrJGJZrrEwPzg4v2owQqSBW6PZBg4L_iTV1KtTTtMBBE_zwOAgqIcGJTAGSrmtYSTYitBIT0sVfgH6fc45of3JGi99XWglZLLSmYAZjF4Ub2x6K_q8khSLkd_7iec98jNRsAjIhKW8zxYoVu5ShRZtkWrkheLmEYb4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"my2@test.ru\",\r\n    \"first_name\": \"\",\r\n    \"last_name\": \"\",\r\n    \"event_id\": \"205\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://participant.local/api/participants/5",
+					"protocol": "http",
+					"host": [
+						"participant",
+						"local"
+					],
+					"path": [
+						"api",
+						"participants",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Participant",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiYWFjZjlmMDIyOTcwZWE4ZjNhYjBkZjEyNzkyYTI1MmRlMDNjZDY4NmY3YzRmMTdiNjg2NTEyOTMyNzU2NGIxNWU5NmEzZWUxZWZiY2YwZTAiLCJpYXQiOjE1OTQ5ODU3NjgsIm5iZiI6MTU5NDk4NTc2OCwiZXhwIjoxNjI2NTIxNzY4LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.CSXUtzcxXB5SfyqlJVwNxWStWQTHIlUCHnKehMsDGSHX_-B9E0ao5j87mpqPe9UA-r2YolSVEaNqhRt1vYYfUSw1ubJhme65nYusi14pAxhEkFist8_o88sT9Lx2sTWFNsw0Tg3T3Ms8eAv9_xhzNb0_N5JdFp6bDCLJ0rHWchqQhJIwH1zcRMtrSpZEfwxXAMoxq-lhUgMYUZun28zyCjBQelY1nvoQ1xjfTyU90UEj0tU-3kN4odngplIwNGTa70GVnt1Xrr3Ga-3f_HdPJJ1_3mZTb8M49alx6IbHufbQKNeYz3KLlyuIX9fjfbID6usbURY5B_MafaxSyQrcBt0xpLnN97AiNsgW5UcSlmq6NHp596rRuF6C4cnPH9MnaoZ65RwLYLkSrwXAmf_gaWNlKU5L2ndlT2BBEz5iZ05LgQ-dZJ0zPK5mAVfXW89IYU6iekwtA8PnB9vF3GpeBJaHUprDxKIxytlrZDNukeVHC-u7Y_cIWez_A543E7oyv4eIFK7W6IrJGJZrrEwPzg4v2owQqSBW6PZBg4L_iTV1KtTTtMBBE_zwOAgqIcGJTAGSrmtYSTYitBIT0sVfgH6fc45of3JGi99XWglZLLSmYAZjF4Ub2x6K_q8khSLkd_7iec98jNRsAjIhKW8zxYoVu5ShRZtkWrkheLmEYb4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://participant.local/api/participants/3",
+					"protocol": "http",
+					"host": [
+						"participant",
+						"local"
+					],
+					"path": [
+						"api",
+						"participants",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Participants For Event",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjEzMzEyODhlMDY4ZDdkOWQ2NmE0YWJkYjZjMmYxZjBlYzMwMjdkZDEzYTFkYTIyODgxOWY4ZDIxZjY4N2YyMDgyZTA4NTU2MjQzMzI3NDMiLCJpYXQiOjE1OTUwNzU0MTksIm5iZiI6MTU5NTA3NTQxOSwiZXhwIjoxNjI2NjExNDE5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.qQ1mVWbRcazJNajSD19_cvMUpJxzAe5m9A8VIaZY_8N-1-5OjjcbUlyud2Kw8NOS7xruc37MmJwkoJAdwRlC8bYmZwsqyN4Jjnwy9gKNWxYBWU1F0KWZcftEAaUD_1iLZtmPUCFPo2kJlT3Sr3I8KGfDuSmw2IsxQh5-UG92s12Q3FN1b4YNCJ9kt-I0dXEM4J73Kwo8GZJD9vfo6yvQbYcFkeEiWxk0n2Ykw4PDzAR_gWWZ_6yqhxm40c4PBLhyecLgD6sKSL5B8EThPh11QH0C-xur3MCjygdufrNTbl1aomr4A4erYT0BJNRWuSkkCvtIOx9BuacljJDxXzRZpMhTb16sw42ij9_5wqDV7uKe78xMHK7BBglgsFlEcBBMg46vv-aafW30AZYncHILQcG05kQH2qrGjUGN4Nz94TPZjHj2KSfSgRDgDT9BSGGsTF4Ey1smjLiiENudqT-zfDxxnGB11IZTmYbniqJrLgIXjaIcFAAPFnGL2VaULV0RNuO6KLYxzJCsm0S5-qbCEJEkE3aBmBFu9krrJIKRhM4WiCG3QS5Legj4iUiR62fUDBCgaPS66XGro6k6D4WEz3qLiAR6pvDsbDJKt_SUwRLbLtaqVojDATzlrP23prz6Tx_Wmf7CVT1ECZ4ZTJjDFdd1meonMffwt68ECKMjYNk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://participant.local/api/participants?filter=event_id:1",
+					"protocol": "http",
+					"host": [
+						"participant",
+						"local"
+					],
+					"path": [
+						"api",
+						"participants"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "event_id:1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

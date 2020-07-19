@@ -6,6 +6,8 @@
 make init
 ```
 
+API доступно по адресу http://localhost:8080
+
 Запуск тестов
 ```
 make test

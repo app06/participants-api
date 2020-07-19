@@ -16,4 +16,4 @@ test:
 	docker-compose run --rm php-cli php artisan test
 
 watch:
-	docker-compose run --rm php-cli php artisan queue:work
+	docker-compose run --rm php-cli php artisan queue:watch
